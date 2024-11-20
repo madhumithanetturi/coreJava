@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Booking {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         Map<String, FlightTicketBookings> flightTicketBooking = new HashMap<>();
 
@@ -20,24 +20,28 @@ public class Booking {
         flightTicketBooking.put(ticket4.getToDestination(), ticket4);
         flightTicketBooking.put(ticket5.getToDestination(), ticket5);
 
-//        Set<Map.Entry<String, FlightTicketBookings>> entrySet = flightTicketBooking.entrySet();
-//        Iterator<Map.Entry<String, FlightTicketBookings>> entryIterator = entrySet.iterator();
-//        for (; entryIterator.hasNext(); ) {
-//
-//            Map.Entry<String, FlightTicketBookings> user = entryIterator.next();
-//            System.out.println(" flightBooking " + user.getKey() + " " + user.getValue().getName());
+        Set<Map.Entry<String, FlightTicketBookings>> entrySet = flightTicketBooking.entrySet();
+        Iterator<Map.Entry<String, FlightTicketBookings>> entryIterator = entrySet.iterator();
+        for (; entryIterator.hasNext(); ) {
 
-            TreeMap<String, FlightTicketBookings> ticketBookingsTreeMap = new TreeMap<>(flightTicketBooking);
-            Set<Map.Entry<String, FlightTicketBookings>> entries = ticketBookingsTreeMap.entrySet();
-            Iterator<Map.Entry<String, FlightTicketBookings>> iterator = entries.iterator();
-            for (; iterator.hasNext(); ) {
+            Map.Entry<String, FlightTicketBookings> user = entryIterator.next();
+            System.out.println(" flightBooking " + user.getKey() + " " + user.getValue().getName());
 
-                Map.Entry<String, FlightTicketBookings> bookingsEntry = iterator.next();
-                System.out.println(" flightBooking " + bookingsEntry.getKey()+ " " + bookingsEntry.getValue());
-            }
 
         }
 
 
+        TreeMap<String, FlightTicketBookings> ticketBookingsTreeMap = new TreeMap<>(flightTicketBooking);
+        Set<Map.Entry<String, FlightTicketBookings>> entries = ticketBookingsTreeMap.entrySet();
+        Iterator<Map.Entry<String, FlightTicketBookings>> iterator = entries.iterator();
+        for (; iterator.hasNext(); ) {
+
+            Map.Entry<String, FlightTicketBookings> bookingsEntry = iterator.next();
+            System.out.println(" flightBooking " + bookingsEntry.getKey() + " " + bookingsEntry.getValue());
+        }
+
     }
-//}
+
+
+}
+
