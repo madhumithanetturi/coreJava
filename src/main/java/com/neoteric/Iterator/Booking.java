@@ -8,7 +8,7 @@ public class Booking {
 
         Map<String, FlightTicketBookings> flightTicketBooking = new HashMap<>();
 
-        FlightTicketBookings ticket1 = new FlightTicketBookings("madhumitha", "45", "9701061849", 1999.0, new Date(), "hyderbad", "vijaywada");
+        FlightTicketBookings ticket1 = new FlightTicketBookings("madhumitha", "45", "9701061849", 1999.0, new Date(), "hyderabad", "vijaywada");
         FlightTicketBookings ticket2 = new FlightTicketBookings("keerthi", "79", "7995179127", 15000.0, new Date(), "hyderabad", "usa");
         FlightTicketBookings ticket3 = new FlightTicketBookings("tharun", "90", "1234567890", 10000.0, new Date(), "hyderabad", "tamilNadu");
         FlightTicketBookings ticket4 = new FlightTicketBookings("rakesh", "57", "2345678901", 5000.0, new Date(), "hyderabad", "delhi");
@@ -28,20 +28,21 @@ public class Booking {
             System.out.println(" flightBooking " + user.getKey() + " " + user.getValue().getName());
 
 
+            TreeMap<String, FlightTicketBookings> ticketBookingsTreeMap = new TreeMap<>(flightTicketBooking);
+            Set<Map.Entry<String, FlightTicketBookings>> entries = ticketBookingsTreeMap.entrySet();
+            Iterator<Map.Entry<String, FlightTicketBookings>> iterator = entries.iterator();
+            for (; iterator.hasNext(); ) {
+
+                Map.Entry<String, FlightTicketBookings> bookingsEntry = iterator.next();
+                System.out.println(" flightBooking " + bookingsEntry.getKey() + " " + bookingsEntry.getValue());
+
+
+            }
+
         }
 
-
-        TreeMap<String, FlightTicketBookings> ticketBookingsTreeMap = new TreeMap<>(flightTicketBooking);
-        Set<Map.Entry<String, FlightTicketBookings>> entries = ticketBookingsTreeMap.entrySet();
-        Iterator<Map.Entry<String, FlightTicketBookings>> iterator = entries.iterator();
-        for (; iterator.hasNext(); ) {
-
-            Map.Entry<String, FlightTicketBookings> bookingsEntry = iterator.next();
-            System.out.println(" flightBooking " + bookingsEntry.getKey() + " " + bookingsEntry.getValue());
-        }
 
     }
-
 
 }
 
