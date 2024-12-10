@@ -26,7 +26,7 @@ public class AverageSalaryLegacyApproach {
         Employee employee3 = new Employee();
         employee3.setName("madhu");
         employee3.setEmpId("3");
-        employee3.setSalary(100000.0);
+        employee3.setSalary(1000.0);
         employee3.setDept("EEE");
 
         Employee employee4 = new Employee();
@@ -44,7 +44,7 @@ public class AverageSalaryLegacyApproach {
         Employee employee6 = new Employee();
         employee6.setName("rinki");
         employee6.setEmpId("6");
-        employee6.setSalary(80000.0);
+        employee6.setSalary(800.0);
         employee6.setDept("IT");
 
         employeeList.add(employee1);
@@ -153,6 +153,8 @@ public class AverageSalaryLegacyApproach {
 
 
         Map<String, Double> deptLowestSalary = new HashMap<>();
+        Map<String,Double> deptHighestSalary = new HashMap<>();
+
 
         for (Employee employee : employeeList) {
             String department = employee.getDept();
@@ -174,7 +176,7 @@ public class AverageSalaryLegacyApproach {
         System.out.println("Lowest salary by department: " + deptLowestSalary);
 
 
-        Map<String,Double> deptHighestSalary = new HashMap<>();
+       // Map<String,Double> deptHighestSalary = new HashMap<>();
 
         for (Employee employee : employeeList) {
             String department = employee.getDept();
@@ -183,7 +185,7 @@ public class AverageSalaryLegacyApproach {
             if (deptHighestSalary.containsKey(department)){
 
                 double currentHighest = deptHighestSalary.get(department);
-                if (salary < currentHighest) {
+                if (salary > currentHighest) {
                     deptHighestSalary.put(department,salary);
                 }else {
                     deptHighestSalary.put(department,salary);

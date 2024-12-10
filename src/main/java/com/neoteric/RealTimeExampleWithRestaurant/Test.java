@@ -1,5 +1,6 @@
 package com.neoteric.RealTimeExampleWithRestaurant;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -24,6 +25,13 @@ resturant.add(new Orders(prawns, LocalDate.of(2024,8,24)));
         resturant.add(new Orders(babyCorn , LocalDate.of(2024,8,26)));
         resturant.add(new Orders(manchuria , LocalDate.of(2024,8,28)));
         resturant.add(new Orders(manchuria , LocalDate.of(2024,8,27)));
+
+        System.out.println("Top sold Items: ");
+        resturant.getMostSoldItems().forEach(entry ->
+                System.out.println(entry.getKey().getName() + " -Sold: " + entry.getValue()));
+
+        DayOfWeek mostPopularDay = resturant.getMostPopularDay();
+        System.out.println("Most popular days for orders: " + mostPopularDay);
 
 
 
